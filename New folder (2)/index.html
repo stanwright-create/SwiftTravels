@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TravelHome Booking</title>
+  <script defer src="script.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <div class="max-w-md mx-auto p-4 space-y-6">
+    <!-- Logo -->
+    <div class="text-center">
+      <h1 class="text-2xl font-bold">Travel Home</h1>
+      <p class="text-sm text-gray-600">Your journey begins here</p>
+    </div>
+
+    <!-- Payment Instructions -->
+    <div class="bg-white p-4 rounded shadow">
+      <h2 class="font-bold text-lg mb-2">How to Book</h2>
+      <ol class="list-decimal list-inside text-sm text-gray-700">
+        <li>Pay via MPESA Till: <strong>XXXXXXX</strong></li>
+        <li>Choose destination, date, time, seat</li>
+        <li>Click 'Complete Booking'</li>
+      </ol>
+    </div>
+
+    <!-- Trip Form -->
+    <div class="bg-white p-4 rounded shadow">
+      <label class="block mb-2 text-sm">Destination</label>
+      <select id="destination" class="w-full p-2 border rounded">
+        <option value="">--Select--</option>
+        <option value="Nairobi">Nairobi</option>
+        <option value="Nakuru">Nakuru</option>
+      </select>
+
+      <label class="block mt-4 mb-2 text-sm">Date of Travel</label>
+      <input type="date" id="date" class="w-full p-2 border rounded" />
+
+      <label class="block mt-4 mb-2 text-sm">Preferred Time</label>
+      <select id="time" class="w-full p-2 border rounded">
+        <option value="">--Select--</option>
+        <option>Morning</option>
+        <option>Midmorning</option>
+        <option>Afternoon</option>
+        <option>Evening</option>
+      </select>
+
+      <button id="checkSeats" class="w-full mt-4 bg-green-600 text-white p-2 rounded">Submit Your Route</button>
+      <p id="loadingMsg" class="mt-2 text-sm text-blue-500 hidden">Checking available seats...</p>
+    </div>
+
+    <!-- Seat Grid (hidden initially) -->
+    <div id="seatSection" class="bg-white p-4 rounded shadow hidden">
+      <h3 class="font-semibold mb-2">Choose Your Seat</h3>
+      <div id="seatGrid" class="grid grid-cols-3 gap-2"></div>
+    </div>
+
+    <!-- User Details -->
+    <div id="userSection" class="bg-white p-4 rounded shadow hidden">
+      <label class="block mb-1 text-sm">Your Name</label>
+      <input type="text" id="name" class="w-full p-2 border rounded mb-2">
+
+      <label class="block mb-1 text-sm">WhatsApp Number</label>
+      <input type="text" id="whatsapp" class="w-full p-2 border rounded mb-2">
+
+      <label class="block mb-1 text-sm">Payment Phone</label>
+      <input type="text" id="payment" class="w-full p-2 border rounded mb-2">
+
+      <label class="block mb-1 text-sm">MPESA Transaction Message</label>
+      <textarea id="mpesa" rows="2" class="w-full p-2 border rounded mb-2"></textarea>
+
+      <button id="submitBooking" class="w-full mt-2 bg-blue-600 text-white p-2 rounded">Complete Booking</button>
+    </div>
+
+    <!-- Thank You Message -->
+    <div id="thankYou" class="text-center text-green-700 font-semibold hidden">
+      Thank you! Your ticket is processing and will be sent to you via WhatsApp.
+    </div>
+  </div>
+</body>
+</html>
